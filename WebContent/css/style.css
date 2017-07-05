@@ -1,0 +1,76 @@
+.colorgraph {
+	height: 5px;
+	border-top: 0;
+	background: #222;
+	border-radius: 5px;
+}
+
+.panel>.panel-heading {
+	background-color: #222222;
+	color: white;
+}
+
+.panel {
+	border-color: #222222;
+}
+
+#categoria {
+	height: 40px;
+	font-size: 18px;
+}
+
+#descricao {
+	max-width: 100%;
+}
+
+#rodape {
+	background-color: #222222;
+	color: white;
+}
+
+#usuario {
+	color: black;
+}
+
+.link {
+	color: black;
+}
+
+.tituloMenu {
+	color: #00C853;
+	font-size: 45px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	font-variant: small-caps;
+}
+
+.subTituloMenu {
+	color: #E0E0E0;
+	font-size: 18px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.blocoServico {
+	background: #eeeeee;
+	padding: 0 0 0 0;
+	margin: 5px;
+}
+
+.blocoServicoMensagem {
+	padding: 5px 5px 5px 5px;
+}
+
+.blocoServicoMensagem>.titulo {
+	font-size: 15px;
+	font-weight: normal;
+	color: #333333;
+}
+
+.blocoServicoMensagem>.corpo {
+	font-size: 12px;
+	font-weight: normal;
+	color: #555555;
+}

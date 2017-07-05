@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Sale Service</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="javascriptCadastro.js"></script>
+
+</h:head>
+<h:body>
+
+	<f:view>
+		<h:form>
+			<!-- Dados do Cabeçalho da página -->
+			<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<div class="text-center">
+					<label class="tituloMenu">SaleService</label> <br /> <label
+						class="subTituloMenu">Seu site de busca de serviços</label>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<li class="active"><a class="navbar-brand"
+						href="/SaleService/"><span class="glyphicon glyphicon-home"></span></a></li>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="/SaleService/produtos.html">Serviços</a></li>
+						<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+								Anuncio</a></li>
+						<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/SaleService/usuarioLogin.html"><span
+								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+						<li><a href="#"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+					</ul>
+					<a class="navbar-brand navbar-right"
+						href="/SaleService/produtos.html"><span
+						class="glyphicon glyphicon-search"></span></a>
+				</div>
+			</div>
+			</nav>
+			<!-- Fim Cabeçalho -->
+
+			<h:messages showSummary="true" errorClass="alert alert-danger"
+				infoClass="alert alert-success" warnClass="alert alert-warning" />
+
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
+						<h2>Fale Conosco</h2>
+						<hr class="colorgraph" />
+						<div class="form-group">
+							<h:inputText value="#{faleConosco.faleConosco.nome}"
+								styleClass="form-control input-lg" a:placeholder="Nome" />
+						</div>
+						<div class="form-group">
+							<h:inputText value="#{faleConosco.faleConosco.email}"
+								styleClass="form-control input-lg" a:placeholder="E-mail" />
+						</div>
+						<div class="form-group">
+							<h:inputText value="#{faleConosco.faleConosco.assunto}"
+								styleClass="form-control input-lg" a:placeholder="Assunto" />
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<div class="form-group">
+									<h:inputTextarea value="#{faleConosco.faleConosco.mensagem}"
+										styleClass="form-control input-lg" rows="7"
+										a:placeholder="Mensagem" />
+								</div>
+							</div>
+						</div>
+						<hr class="colorgraph" />
+						<div class="row">
+							<div class="col-xs-12 col-md-6 col-md-offset-3">
+								<h:commandButton value="Enviar"
+									styleClass="btn btn-primary btn-block btn-lg"
+									action="#{faleConosco.enviar}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</f:view>
+</h:body>
+</html>

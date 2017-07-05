@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>SaleService</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="javascript.js"></script>
+
+</head>
+<body>
+	<!-- Dados do Cabeçalho da página -->
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="text-center">
+				<label class="tituloMenu">SaleService</label> <br /> <label
+					class="subTituloMenu">Seu site de busca de serviços</label>
+			</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<li class="active"><a class="navbar-brand" href="/SaleService/"><span
+						class="glyphicon glyphicon-home"></span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/SaleService/produtos.html">Serviços</a></li>
+					<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+							Anuncio</a></li>
+					<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/SaleService/usuarioLogin.html"><span
+							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+				</ul>
+				<a class="navbar-brand navbar-right"
+					href="/SaleService/produtos.html"><span
+					class="glyphicon glyphicon-search"></span></a>
+			</div>
+		</div>
+	</nav>
+	<!-- Fim Cabeçalho -->
+
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
+				<form role="form">
+					<h2>Cadastro de Anúncio</h2>
+					<hr class="colorgraph">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<label for="sel1"></label> <select class="form-control"
+									id="categoria" name="categoria">
+									<option selected disabled value="0">Selecione uma
+										categoria</option>
+									<option>Domestica</option>
+									<option>Mecanica</option>
+									<option>Lazer</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<input type="text" name="display_name" id="display_name"
+							class="form-control input-lg" placeholder="Titulo" tabindex="1">
+					</div>
+					<div class="form-group">
+						<textarea type="text" name="display_name" id="descricao"
+							class="form-control input-lg" rows="5" placeholder="Descriçao"
+							tabindex="2"></textarea>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<input type="text" name="display_name" id="preço"
+									class="form-control input-lg" placeholder="Preço R$"
+									tabindex="3">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+								<label class="input-group-btn"> <span
+									class="btn btn-primary"> Browse&hellip; <input
+										type="file" style="display: none;" multiple>
+								</span>
+								</label> <input type="text" class="form-control" readonly>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-primary">
+								<div class="panel-heading">Inserir imagem</div>
+								<div class="panel-body">
+									<img src="https://placehold.it/150x80?text=IMAGE"
+										class="img-responsive" style="width: 100%" alt="Image">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr class="colorgraph">
+
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<input type="submit" class="btn btn-lg btn-success btn-block"
+								value="Registrar">
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+

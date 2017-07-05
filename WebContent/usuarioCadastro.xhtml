@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head> 
+    <title>Sale Service</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="javascriptCadastro.js"></script>
+
+  </head>
+  <body>
+    <!-- Dados do Cabeçalho da página -->
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="text-center">
+				<label class="tituloMenu">SaleService</label> <br /> <label
+					class="subTituloMenu">Seu site de busca de serviços</label>
+			</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<li class="active"><a class="navbar-brand" href="/SaleService/"><span
+						class="glyphicon glyphicon-home"></span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/SaleService/produtos.html">Serviços</a></li>
+					<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+							Anuncio</a></li>
+					<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/SaleService/usuarioLogin.html"><span
+							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+				</ul>
+				<a class="navbar-brand navbar-right"
+					href="/SaleService/produtos.html"><span
+					class="glyphicon glyphicon-search"></span></a>
+			</div>
+		</div>
+	</nav>
+	<!-- Fim Cabeçalho -->
+	
+    <div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
+				<form role="form">
+					<h2>Cadastro de Usuário</h2>
+					<hr class="colorgraph">					
+					<div class="form-group">
+						<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Nome de Usuario" tabindex="1">
+					</div>	
+					<div class="form-group">
+						<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Nome/Razao Social" tabindex="2">
+					</div>
+					<div class="form-group">
+							<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="CPF/CNPJ" tabindex="3">
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Telefone" tabindex="4">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Celular" tabindex="5">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-5 col-md-5">
+							<div class="form-group">
+								<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="CEP" tabindex="6">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-2 col-md-2">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="UF" tabindex="7">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-5 col-md-5">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Cidade" tabindex="8">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-5 col-md-5">
+							<div class="form-group">
+								<input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="Endereço" tabindex="9">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-2 col-md-2">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Numero" tabindex="10">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-5 col-md-5">
+							<div class="form-group">
+								<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Complemento" tabindex="11">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Bairro" tabindex="12">
+					</div>
+					<div class="form-group">
+						<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="E-mail" tabindex="13">
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="senha" id="senha" class="form-control input-lg" placeholder="Senha" tabindex="14">
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<div class="form-group">
+								<input type="password" name="confirmar_senha" id="confirmar_senha" class="form-control input-lg" placeholder="Confirmar Senha" tabindex="15">
+							</div>
+						</div>
+						</div>
+						<div class="row">
+							<div class="checkbox col-md-6">
+								<label><input type="checkbox" name="t_and_c" id="t_and_c" value="1">Aceito os <a href="#" data-toggle="modal" data-target="#t_and_c_m">Termos e Condiçoes</a></label>
+							</div>		
+							<!-- Div para quebrar linha-->
+							</div>
+							<div class"row">
+								<div class="checkbox">
+									<label><input type="checkbox" name="novidades" id="novidades" value="2">Receber Novidades no E-mail</label>
+								</div>
+							</div>	
+							<hr class="colorgraph">
+							<div class="row">
+								<div class="col-xs-12 col-md-6 col-md-offset-3"><input type="submit" value="Registrar" class="btn btn-primary btn-block btn-lg" tabindex="16">
+							</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+  </body>
+</html>

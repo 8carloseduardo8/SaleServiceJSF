@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>SaleService</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="javascript.js"></script>
+</head>
+<body>
+	<!-- Dados do Cabeçalho da página -->
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="text-center">
+				<label class="tituloMenu">SaleService</label> <br /> <label
+					class="subTituloMenu">Seu site de busca de serviços</label>
+			</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<li class="active"><a class="navbar-brand" href="/SaleService/"><span
+						class="glyphicon glyphicon-home"></span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/SaleService/produtos.html">Serviços</a></li>
+					<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+							Anuncio</a></li>
+					<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/SaleService/usuarioLogin.html"><span
+							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+				</ul>
+				<a class="navbar-brand navbar-right"
+					href="/SaleService/produtos.html"><span
+					class="glyphicon glyphicon-search"></span></a>
+			</div>
+		</div>
+	</nav>
+	<!-- Fim Cabeçalho -->
+
+	<div class="container">
+		<div class="row" style="margin-top: 20px">
+			<div
+				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+				<form role="form">
+					<fieldset>
+						<h2>Login</h2>
+						<hr class="colorgraph">
+						<div class="form-group">
+							<input type="email" name="email" id="email"
+								class="form-control input-lg" placeholder="Nome de Usuario">
+						</div>
+						<div class="form-group">
+							<input type="password" name="password" id="password"
+								class="form-control input-lg" placeholder="Senha">
+						</div>
+						<span class="button-checkbox">
+							<button type="button" class="btn" data-color="info">Lembrar-me</button>
+							<input type="checkbox" name="remember_me" id="remember_me"
+							checked="checked" class="hidden"> <a href=""
+							class="btn btn-link pull-right">Esqueceu a Senha?</a>
+						</span>
+						<hr class="colorgraph">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<input type="submit" class="btn btn-lg btn-success btn-block"
+									value="Logar">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<a href="/SaleService/cadastro/usuarioCadastro.html"
+									class="btn btn-lg btn-primary btn-block">Registrar</a>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
