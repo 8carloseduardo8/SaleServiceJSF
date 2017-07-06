@@ -1,137 +1,137 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<title>SaleService</title>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Sale Service</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="javascript.js"></script>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="javascript.js"></script>
-
-</head>
-<body>
-	<!-- Dados do CabeÃ§alho da pÃ¡gina -->
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="text-center">
-				<label class="tituloMenu">SaleService</label> <br /> <label
-					class="subTituloMenu">Seu site de busca de serviÃ§os</label>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form>
+			<!-- Dados do Cabeçalho da página -->
+			<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<div class="text-center">
+					<label class="tituloMenu">SaleService</label> <br /> <label
+						class="subTituloMenu">Seu site de busca de serviços</label>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<li class="active"><a class="navbar-brand"
+						href="/SaleService/"><span class="glyphicon glyphicon-home"></span></a></li>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="/SaleService/produtos.html">Serviços</a></li>
+						<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+								Anuncio</a></li>
+						<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/SaleService/usuarioLogin.html"><span
+								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+						<li><a href="#"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+					</ul>
+					<a class="navbar-brand navbar-right"
+						href="/SaleService/produtos.html"><span
+						class="glyphicon glyphicon-search"></span></a>
+				</div>
 			</div>
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<li class="active"><a class="navbar-brand" href="/SaleService/"><span
-						class="glyphicon glyphicon-home"></span></a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li><a href="/SaleService/produtos.html">ServiÃ§os</a></li>
-					<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
-							Anuncio</a></li>
-					<li><a href="/SaleService/faleConosco.html">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/SaleService/usuarioLogin.html"><span
-							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
-				</ul>
-				<a class="navbar-brand navbar-right"
-					href="/SaleService/produtos.html"><span
-					class="glyphicon glyphicon-search"></span></a>
-			</div>
-		</div>
-	</nav>
-	<!-- Fim CabeÃ§alho -->
+			</nav>
+			<!-- Fim Cabeçalho -->
 
-	<div class="container">
-		<div class="row">
-			<div
-				class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
-				<form role="form">
-					<h2>Cadastro de AnÃºncio</h2>
-					<hr class="colorgraph">
-					<div class="row">
-						<div class="col-md-5">
-							<div class="form-group">
-								<label for="sel1"></label> <select class="form-control"
-									id="categoria" name="categoria">
-									<option selected disabled value="0">Selecione uma
-										categoria</option>
-									<option>Domestica</option>
-									<option>Mecanica</option>
-									<option>Lazer</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<input type="text" name="display_name" id="display_name"
-							class="form-control input-lg" placeholder="Titulo" tabindex="1">
-					</div>
-					<div class="form-group">
-						<textarea type="text" name="display_name" id="descricao"
-							class="form-control input-lg" rows="5" placeholder="DescriÃ§ao"
-							tabindex="2"></textarea>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="form-group">
-								<input type="text" name="display_name" id="preÃ§o"
-									class="form-control input-lg" placeholder="PreÃ§o R$"
-									tabindex="3">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="input-group">
-								<label class="input-group-btn"> <span
-									class="btn btn-primary"> Browse&hellip; <input
-										type="file" style="display: none;" multiple>
-								</span>
-								</label> <input type="text" class="form-control" readonly>
-							</div>
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel panel-primary">
-								<div class="panel-heading">Inserir imagem</div>
-								<div class="panel-body">
-									<img src="https://placehold.it/150x80?text=IMAGE"
-										class="img-responsive" style="width: 100%" alt="Image">
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
+						<h2>Cadastro de Anúncio</h2>
+						<hr class="colorgraph" />
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group">
+									<h:outputLabel for="categoria"></h:outputLabel> <h:selectOneMenu styleClass="form-control"
+										id="categoria" >
+										<f:selectItem itemValue="0" itemLabel="Selecione uma categoria"></f:selectItem>
+										<f:selectItem itemValue="1" itemLabel="Domestica"></f:selectItem>
+										<f:selectItem itemValue="2" itemLabel="Mecanica"></f:selectItem>
+										<f:selectItem itemValue="3" itemLabel="Lazer"></f:selectItem>
+									</h:selectOneMenu>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<hr class="colorgraph">
-
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3">
-							<input type="submit" class="btn btn-lg btn-success btn-block"
-								value="Registrar">
+						<div class="form-group">
+							<h:inputText value="cadastroAnuncio.cadastroAnuncio.titulo" id="display_name"
+								styleClass="form-control input-lg" a:placeholder="Titulo"/>
 						</div>
+						<div class="form-group">
+							<h:inputTextarea value="cadastroAnuncio.cadastroAnuncio.descricao" id="descricao"
+								styleClass="form-control input-lg" rows="5" a:placeholder="Descriçao"></h:inputTextarea>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="form-group">
+									<h:inputText value="cadastroAnuncio.cadastroAnuncio.preco" id="preço"
+										class="form-control input-lg" a:placeholder="Preço R$"/>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<label class="input-group-btn"> <span
+										class="btn btn-primary"> Browse&hellip; <h:inputFile
+											style="display: true;" multiple/></span>
+									</label> <h:inputText  styleClass="form-control"/>
+								</div>
+							</div>
+						</div>
+						<br/>
+						<!--<div class="row">
+							<div class="col-md-6">
+								<div class="panel panel-primary">
+									<div class="panel-heading">Inserir imagem</div>
+									<div class="panel-body">
+										<img src="https://placehold.it/150x80?text=IMAGE"
+											class="img-responsive" style="width: 100%" alt="Image"/>
+									</div>
+								</div>
+							</div>
+						</div>-->
+
+						<hr class="colorgraph"/>
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<input type="submit" class="btn btn-lg btn-success btn-block"
+									value="Registrar"/>
+							</div>
+						</div>
+
 					</div>
-
-				</form>
+				</div>
 			</div>
-		</div>
-	</div>
-
-</body>
+		</h:form>
+	</f:view>
+</h:body>
 </html>
 
 
