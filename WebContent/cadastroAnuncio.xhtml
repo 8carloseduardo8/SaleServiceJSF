@@ -58,6 +58,8 @@
 			</div>
 			</nav>
 			<!-- Fim Cabeçalho -->
+			<h:messages showSummary="true" errorClass="alert alert-danger"
+				infoClass="alert alert-success" warnClass="alert alert-warning" />
 
 			<div class="container">
 				<div class="row">
@@ -68,45 +70,53 @@
 						<div class="row">
 							<div class="col-md-5">
 								<div class="form-group">
-									<h:outputLabel for="categoria"></h:outputLabel> <h:selectOneMenu styleClass="form-control"
-										id="categoria" >
-										<f:selectItem itemValue="0" itemLabel="Selecione uma categoria"></f:selectItem>
-										<f:selectItem itemValue="1" itemLabel="Domestica"></f:selectItem>
-										<f:selectItem itemValue="2" itemLabel="Mecanica"></f:selectItem>
-										<f:selectItem itemValue="3" itemLabel="Lazer"></f:selectItem>
+									<h:outputLabel for="categoria"></h:outputLabel>
+									<h:selectOneMenu styleClass="form-control" id="categoria"
+										value="#{cadastroAnuncio.cadastroAnuncio.categoria}">
+										<f:selectItem itemValue="Domestica" itemLabel="Domestica"></f:selectItem>
+										<f:selectItem itemValue="Mecanica" itemLabel="Mecanica"></f:selectItem>
+										<f:selectItem itemValue="Lazer" itemLabel="Lazer"></f:selectItem>
 									</h:selectOneMenu>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<h:inputText value="cadastroAnuncio.cadastroAnuncio.titulo" id="display_name"
-								styleClass="form-control input-lg" a:placeholder="Titulo"/>
+							<h:inputText value="#{cadastroAnuncio.cadastroAnuncio.titulo}"
+								id="display_name" styleClass="form-control input-lg"
+								a:placeholder="Titulo" />
 						</div>
 						<div class="form-group">
-							<h:inputTextarea value="cadastroAnuncio.cadastroAnuncio.descricao" id="descricao"
-								styleClass="form-control input-lg" rows="5" a:placeholder="Descriçao"></h:inputTextarea>
+							<h:inputTextarea
+								value="#{cadastroAnuncio.cadastroAnuncio.descricao}"
+								id="descricao" styleClass="form-control input-lg" rows="5"
+								a:placeholder="Descriçao"></h:inputTextarea>
 						</div>
 						<div class="row">
 							<div class="col-md-5">
 								<div class="form-group">
-									<h:inputText value="cadastroAnuncio.cadastroAnuncio.preco" id="preço"
-										class="form-control input-lg" a:placeholder="Preço R$"/>
+									<h:inputText value="#{cadastroAnuncio.cadastroAnuncio.preco}"
+										id="preço" class="form-control input-lg"
+										a:placeholder="Preço R$">
+										<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+									</h:inputText>
 								</div>
 							</div>
 						</div>
+						<!--
 						<div class="row">
 							<div class="col-md-6">
 								<div class="input-group">
 									<label class="input-group-btn"> <span
 										class="btn btn-primary"> Browse&hellip; <h:inputFile
-											style="display: true;" multiple/></span>
-									</label> <h:inputText  styleClass="form-control"/>
+												style="display: true;" /></span>
+									</label>
+									<h:inputText styleClass="form-control" />
 								</div>
 							</div>
 						</div>
-						<br/>
-						<!--<div class="row">
+						<br />
+						<div class="row">
 							<div class="col-md-6">
 								<div class="panel panel-primary">
 									<div class="panel-heading">Inserir imagem</div>
@@ -118,11 +128,13 @@
 							</div>
 						</div>-->
 
-						<hr class="colorgraph"/>
+						<hr class="colorgraph" />
 						<div class="row">
 							<div class="col-md-6 col-md-offset-3">
-								<input type="submit" class="btn btn-lg btn-success btn-block"
-									value="Registrar"/>
+
+								<h:commandButton value="Registrar"
+									styleClass="btn btn-lg btn-success btn-block"
+									action="#{cadastroAnuncio.registrar}" />
 							</div>
 						</div>
 

@@ -1,179 +1,198 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<title>Sale Service</title>
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Sale Service</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style>
+</style>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form>
+			<!-- Dados do Cabeçalho da página -->
+			<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<div class="text-center">
+					<label class="tituloMenu">SaleService</label> <br /> <label
+						class="subTituloMenu">Seu site de busca de serviços</label>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<li class="active"><a class="navbar-brand"
+						href="/SaleService/"><span class="glyphicon glyphicon-home"></span></a></li>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="/SaleService/produtos.html">Serviços</a></li>
+						<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
+								Anuncio</a></li>
+						<li><a href="/SaleService/faleConosco.html">Contato</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/SaleService/usuarioLogin.html"><span
+								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+						<li><a href="#"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+					</ul>
+					<a class="navbar-brand navbar-right"
+						href="/SaleService/produtos.html"><span
+						class="glyphicon glyphicon-search"></span></a>
+				</div>
+			</div>
+			</nav>
+			<!-- Fim Cabeçalho -->
 
-<meta charset="utf-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="javascriptCadastro.js"></script>
-</head>
-<body>
-	<!-- Dados do CabeÃ§alho da pÃ¡gina -->
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="text-center">
-				<label class="tituloMenu">SaleService</label> <br /> <label
-					class="subTituloMenu">Seu site de busca de serviÃ§os</label>
-			</div>
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<li class="active"><a class="navbar-brand" href="/SaleService/"><span
-						class="glyphicon glyphicon-home"></span></a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li><a href="/SaleService/produtos.html">ServiÃ§os</a></li>
-					<li><a href="/SaleService/cadastroAnuncio.html">Cadastrar
-							Anuncio</a></li>
-					<li><a href="/SaleService/faleConosco.html">Contato</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/SaleService/usuarioLogin.html"><span
-							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
-				</ul>
-				<a class="navbar-brand navbar-right"
-					href="/SaleService/produtos.html"><span
-					class="glyphicon glyphicon-search"></span></a>
-			</div>
-		</div>
-	</nav>
-	<!-- Fim CabeÃ§alho -->
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<h3>Filtros</h3>
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control input-sm"
+								placeholder="Filtro" />
+							<div class="input-group-btn">
+								<button class="btn btn-default input-sm" type="submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<select class="form-control input-sm" id="ordenar" name="ordenar"
+							placeholder="Ordenar">
+							<option>Ordernar por</option>
+							<option>Preço (Mais Baratos)</option>
+							<option>Preço (Mais Caros)</option>
+							<option>Categoria</option>
+							<option>Destaques</option>
+						</select>
+					</div>
 
-	<div class="col-md-2">
-		<ul class="nav nav-pills nav-stacked">
-			<h3>Filtros</h3>
-			<div class="form-group">
-				<div class="input-group">
-					<input type="text" class="form-control input-sm"
-						placeholder="Filtro">
-					<div class="input-group-btn">
-						<button class="btn btn-default input-sm" type="submit">
-							<i class="glyphicon glyphicon-search"></i>
-						</button>
+
+					<hr class="colorgraph" />
+					<li><h4>Preço</h4></li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />até R$ 100,00</label></a>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />de R$ 100,00 à R$ 500,00</label></a>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />de R$ 500,00 à R$ 2.000,00</label></a>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />a partir de R$ 2.000,00</label></a>
+						</div>
+					</li>
+					<hr class="colorgraph" />
+					<h4>Categoria</h4>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />Domestica</label></a>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />Mecanica</label></a>
+						</div>
+					</li>
+					<li>
+						<div class="checkbox">
+							<a href="" class="link"><label><input type="checkbox"
+									value="" />Lazer</label></a>
+						</div>
+					</li>
+					<hr class="colorgraph" />
+
+					<h:commandButton value="Filtrar"
+						styleClass="btn btn-lg btn-success btn-block" />
+
+				</ul>
+			</div>
+			<div class="container col-sm-10">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="blocoServico">
+							<a class="link" href="/SaleService/servico.html"> <img
+								src="img/domestica.jpg" class="img-responsive"
+								style="width: 100%" alt="Image" />
+								<div class="blocoServicoMensagem">
+									<label class="titulo">Serviço Domestico</label> <br /> <label
+										class="corpo">Prestação de serviços em seu domicilio</label>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="blocoServico">
+							<a class="link" href="/SaleService/servico.html"> <img
+								src="img/tecnico_celular.jpg" class="img-responsive"
+								style="width: 100%" alt="Image" />
+								<div class="blocoServicoMensagem">
+									<label class="titulo">Assistência técnica de celular</label><br />
+									<label class="corpo">restamos assistência técnica das
+										demais marcas</label>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="blocoServico">
+							<a class="link" href="/SaleService/servico.html"> <img
+								src="img/auditoria_empresa.jpg" class="img-responsive"
+								style="width: 100%" alt="Image" />
+								<div class="blocoServicoMensagem">
+									<label class="titulo">Acompanhando sua microempresa de
+										perto</label><br /> <label class="corpo">Serviços
+										especializado de auditora para mico e pequenas empresas</label>
+								</div>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<select class="form-control input-sm" id="ordenar" name="ordenar"
-					placeholder="Ordenar">
-					<option hidden>Ordernar por</option>
-					<option>PreÃ§o (Mais Baratos)</option>
-					<option>PreÃ§o (Mais Caros)</option>
-					<option>Categoria</option>
-					<option>Destaques</option>
-				</select>
+			<br />
+			<div class="text-center">
+				<ul class="pagination">
+					<li><a href="#" aria-label="Previous"> <span
+							aria-hidden="true">&laquo;</span>
+					</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#" aria-label="Next"> <span
+							aria-hidden="true">&raquo;</span>
+					</a></li>
+				</ul>
 			</div>
-
-
-			<hr class="colorgraph">
-			<li><h4>PreÃ§o</h4></li>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">atÃ© R$ 100,00</label></a>
-				</div>
-			</li>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">de R$ 100,00 Ã  R$ 500,00</label></a>
-				</div>
-			</li>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">de R$ 500,00 Ã  R$ 2.000,00</label></a>
-				</div>
-			</li>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">a partir de R$ 2.000,00</label></a>
-				</div>
-			</li>
-			<hr class="colorgraph">
-			<h4>Categoria</h4>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">Lavanderia</label></a>
-				</div>
-			</li>
-			<li>
-				<div class="checkbox">
-					<a href="" class="link"><label><input type="checkbox"
-							value="">Mecanico</label></a>
-				</div>
-			</li>
-			<hr class="colorgraph">
-		</ul>
-	</div>
-	<div class="container col-sm-10">
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="blocoServico">
-					<a class="link" href="/SaleService/servico.html"> <img
-						src="img/domestica.jpg" class="img-responsive" style="width: 100%"
-						alt="Image" />
-						<div class="blocoServicoMensagem">
-							<label class="titulo">ServiÃ§o Domestico</label> <br /> <label
-								class="corpo">PrestaÃ§Ã£o de serviÃ§os em seu domicilio</label>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="blocoServico">
-					<a class="link" href="/SaleService/servico.html"> <img
-						src="img/tecnico_celular.jpg" class="img-responsive"
-						style="width: 100%" alt="Image" />
-						<div class="blocoServicoMensagem">
-							<label class="titulo">AssistÃªncia tÃ©cnica de celular</label><br />
-							<label class="corpo">restamos assistÃªncia tÃ©cnica das
-								demais marcas</label>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="blocoServico">
-					<a class="link" href="/SaleService/servico.html"> <img
-						src="img/auditoria_empresa.jpg" class="img-responsive"
-						style="width: 100%" alt="Image" />
-						<div class="blocoServicoMensagem">
-							<label class="titulo">Acompanhando sua microempresa de
-								perto</label><br /> <label class="corpo">ServiÃ§os especializado
-								de auditora para mico e pequenas empresas</label>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<br />
-	<div class="text-center">
-		<ul class="pagination">
-			<li><a href="#" aria-label="Previous"> <span
-					aria-hidden="true">&laquo;</span>
-			</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-			</a></li>
-		</ul>
-	</div>
-</body>
+		</h:form>
+	</f:view>
+</h:body>
 </html>

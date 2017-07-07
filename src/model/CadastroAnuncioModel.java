@@ -11,19 +11,20 @@ import entity.CadastroAnuncioEntity;
 
 public class CadastroAnuncioModel {
 	private Conexao con;
-	
+
 	public CadastroAnuncioModel() {
 		con = Conector.getConexao();
+		createTable();
 	}
-	
+
 	public void createTable() {
 		con.executarNoEx("CREATE TABLE CADASTROANUNCIO (   id             INTEGER PRIMARY KEY)");
-		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO (   titulo         VARCHAR(100)");
+		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD titulo         VARCHAR(100)");
 		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD categoria      VARCHAR(100)");
 		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD descricao      VARCHAR(1000)");
-		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD preco       	  VARCHAR(100)");
+		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD preco       	  DECIMAL(12,2)");
 	}
-	
+
 	public List<CadastroAnuncioEntity> get() throws Exception {
 		String sql = "SELECT * FROM CADASTROANUNCIO ORDER BY id";
 
@@ -37,7 +38,7 @@ public class CadastroAnuncioModel {
 
 		return lista;
 	}
-	
+
 	public CadastroAnuncioEntity get(int id) throws Exception {
 		String sql = "SELECT * FROM CADASTROANUNCIO WHERE id = " + Oracle.strInsert(id);
 
@@ -49,7 +50,7 @@ public class CadastroAnuncioModel {
 		res.close();
 		return Usuario;
 	}
-	
+
 	public void registrar(CadastroAnuncioEntity item) throws Exception {
 		String sql;
 
@@ -74,14 +75,14 @@ public class CadastroAnuncioModel {
 		con.executar(sql);
 		return;
 	}
-	
+
 	public static CadastroAnuncioEntity parse(Resultado res) throws Exception {
 		CadastroAnuncioEntity item = new CadastroAnuncioEntity();
 		item.id = res.getInt("id");
 		item.titulo = res.getString("titulo");
 		item.categoria = res.getString("categoria");
 		item.descricao = res.getString("descricao");
-		item.preco = res.getString("preco");
+		item.preco = res.getDouble("preco");
 
 		return item;
 	}

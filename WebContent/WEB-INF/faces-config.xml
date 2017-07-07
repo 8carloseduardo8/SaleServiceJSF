@@ -11,6 +11,12 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
+	<managed-bean>
+		<managed-bean-name>cadastroAnuncio</managed-bean-name>
+		<managed-bean-class>controller.CadastroAnuncioController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
 	<lifecycle>
 		<phase-listener>com.util.SecurityController</phase-listener>
 	</lifecycle>
