@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<?xml version='1.0' encoding='ISO-8859-1' ?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -23,161 +22,7 @@
 <h:body>
 	<f:view>
 		<h:form>
-			<!-- Dados do Cabeçalho da página -->
-			<nav class="navbar navbar-inverse navbar-static-top">
-			<div class="container-fluid">
-				<div class="text-center">
-					<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
-					<br />
-					<h:outputLabel styleClass="subTituloMenu"
-						value="Seu site de busca de serviços"></h:outputLabel>
-				</div>
-				<div class="navbar-header">
-					<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</h:commandButton>
-					<li class="active"><a class="navbar-brand"
-						href="/saleservice/"><h:panelGroup
-								styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
-								Anuncio</a></li>
-						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/saleservice/usuarioLogin.jsf"><span
-								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
-					</ul>
-					<a class="navbar-brand navbar-right"
-						href="/saleservice/produtos.jsf"><span
-						class="glyphicon glyphicon-search"></span></a>
-				</div>
-			</div>
-			</nav>
-			<!-- Fim Cabeçalho -->
-			<h:messages showSummary="true" errorClass="alert alert-danger"
-				infoClass="alert alert-success" warnClass="alert alert-warning" />
-
-			<div class="container">
-				<div class="row">
-					<div
-						class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
-						<h2>Cadastro de Anúncio</h2>
-						<hr class="colorgraph" />
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<h:outputLabel for="categoria"></h:outputLabel>
-									<h:selectOneMenu styleClass="form-control" id="categoria"
-										value="#{cadastroAnuncio.anuncio.categoria}">
-										<f:selectItems value="#{cadastroAnuncio.listaCategorias}"
-											var="categoria" itemLabel="#{categoria}"
-											itemValue="#{categoria}" />
-									</h:selectOneMenu>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<h:inputText value="#{cadastroAnuncio.anuncio.titulo}"
-								id="display_name" styleClass="form-control input-lg"
-								a:placeholder="Titulo" />
-						</div>
-						<div class="form-group">
-							<h:inputTextarea value="#{cadastroAnuncio.anuncio.descricao}"
-								id="descricao" styleClass="form-control input-lg" rows="5"
-								a:placeholder="Descriçao"></h:inputTextarea>
-						</div>
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<h:inputText value="#{cadastroAnuncio.anuncio.preco}"
-										id="preço" class="form-control input-lg"
-										a:placeholder="Preço R$">
-										<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
-									</h:inputText>
-								</div>
-							</div>
-						</div>
-						<!--
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<label class="input-group-btn"> <span
-										class="btn btn-primary"> Browse&hellip; <h:inputFile
-												style="display: true;" /></span>
-									</label>
-									<h:inputText styleClass="form-control" />
-								</div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-6">
-								<div class="panel panel-primary">
-									<div class="panel-heading">Inserir imagem</div>
-									<div class="panel-body">
-										<img src="https://placehold.it/150x80?text=IMAGE"
-											class="img-responsive" style="width: 100%" alt="Image"/>
-									</div>
-								</div>
-							</div>
-						</div>-->
-
-						<hr class="colorgraph" />
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3">
-
-								<h:commandButton value="Registrar"
-									styleClass="btn btn-lg btn-success btn-block"
-									action="#{cadastroAnuncio.registrar}" />
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</h:form>
-	</f:view>
-</h:body>
-</html>
-
-
-
-=======
-<?xml version='1.0' encoding='ISO-8859-1' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-<h:head>
-	<title>Sale Service</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-		crossorigin="anonymous" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="javascript.js"></script>
-
-</h:head>
-<h:body>
-	<f:view>
-		<h:form>
-			<!-- Dados do CabeÃ§alho da pÃ¡gina -->
+			<!-- Dados do Cabeï¿½alho da pï¿½gina -->
 			<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
 				<div class="text-center">
@@ -216,7 +61,7 @@
 				</div>
 			</div>
 			</nav>
-			<!-- Fim CabeÃ§alho -->
+			<!-- Fim Cabeï¿½alho -->
 			<h:messages showSummary="true" errorClass="alert alert-danger"
 				infoClass="alert alert-success" warnClass="alert alert-warning" />
 
@@ -232,13 +77,9 @@
 									<h:outputLabel for="categoria"></h:outputLabel>
 									<h:selectOneMenu styleClass="form-control" id="categoria"
 										value="#{cadastroAnuncio.anuncio.categoria}">
-										<f:selectItem itemValue="DomÃ©stica" itemLabel="DomÃ©stica" />
-										<f:selectItem itemValue="MecÃ¢nico" itemLabel="MecÃ¢nico" />
-										<f:selectItem itemValue="Lazer" itemLabel="Lazer" />
-										<f:selectItem itemValue="Auditoria Empresas"
-											itemLabel="Auditoria Empresas" />
-										<f:selectItem itemValue="TÃ©cnico Celular"
-											itemLabel="TÃ©cnico Celular" />
+										<f:selectItems value="#{cadastroAnuncio.listaCategorias}"
+											var="categoria" itemLabel="#{categoria}"
+											itemValue="#{categoria}" />
 									</h:selectOneMenu>
 								</div>
 							</div>
@@ -258,7 +99,7 @@
 							<div class="col-md-5">
 								<div class="form-group">
 									<h:inputText value="#{cadastroAnuncio.anuncio.preco}"
-										id="preÃ§o" class="form-control input-lg"
+										id="preco" class="form-control input-lg"
 										a:placeholder="PreÃ§o R$">
 										<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
 									</h:inputText>
@@ -307,4 +148,3 @@
 	</f:view>
 </h:body>
 </html>
->>>>>>> e13e456e225777c0236d2037d6ff63f0d774b309
