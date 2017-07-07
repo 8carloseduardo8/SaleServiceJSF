@@ -1,8 +1,14 @@
 package entity;
 
-import model.CadastroAnuncioModel;
+import java.util.ArrayList;
 
-public class CadastroAnuncioEntity {
+import model.AnuncioModel;
+
+public class AnuncioEntity {
+
+	public static final String CATEGORIA_DOMESTICA = "Doméstica";
+	public static final String CATEGORIA_MECANICO = "Mecânico";
+	public static final String CATEGORIA_LAZER = "Lazer";
 
 	public int id;
 	public String titulo;
@@ -29,7 +35,11 @@ public class CadastroAnuncioEntity {
 		}
 
 		// SALVAR NO BANCO
-		new CadastroAnuncioModel().registrar(this);
+		new AnuncioModel().registrar(this);
+	}
+
+	public ArrayList<AnuncioEntity> get() throws Exception {
+		return new AnuncioModel().get();
 	}
 
 	public int getId() {

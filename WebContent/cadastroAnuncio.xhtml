@@ -72,30 +72,33 @@
 								<div class="form-group">
 									<h:outputLabel for="categoria"></h:outputLabel>
 									<h:selectOneMenu styleClass="form-control" id="categoria"
-										value="#{cadastroAnuncio.cadastroAnuncio.categoria}">
-										<f:selectItem itemValue="Domestica" itemLabel="Domestica"></f:selectItem>
-										<f:selectItem itemValue="Mecanica" itemLabel="Mecanica"></f:selectItem>
-										<f:selectItem itemValue="Lazer" itemLabel="Lazer"></f:selectItem>
+										value="#{cadastroAnuncio.anuncio.categoria}">
+										<f:selectItem itemValue="Doméstica" itemLabel="Doméstica" />
+										<f:selectItem itemValue="Mecânico" itemLabel="Mecânico" />
+										<f:selectItem itemValue="Lazer" itemLabel="Lazer" />
+										<f:selectItem itemValue="Auditoria Empresas"
+											itemLabel="Auditoria Empresas" />
+										<f:selectItem itemValue="Técnico Celular"
+											itemLabel="Técnico Celular" />
 									</h:selectOneMenu>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<h:inputText value="#{cadastroAnuncio.cadastroAnuncio.titulo}"
+							<h:inputText value="#{cadastroAnuncio.anuncio.titulo}"
 								id="display_name" styleClass="form-control input-lg"
 								a:placeholder="Titulo" />
 						</div>
 						<div class="form-group">
-							<h:inputTextarea
-								value="#{cadastroAnuncio.cadastroAnuncio.descricao}"
+							<h:inputTextarea value="#{cadastroAnuncio.anuncio.descricao}"
 								id="descricao" styleClass="form-control input-lg" rows="5"
 								a:placeholder="Descriçao"></h:inputTextarea>
 						</div>
 						<div class="row">
 							<div class="col-md-5">
 								<div class="form-group">
-									<h:inputText value="#{cadastroAnuncio.cadastroAnuncio.preco}"
+									<h:inputText value="#{cadastroAnuncio.anuncio.preco}"
 										id="preço" class="form-control input-lg"
 										a:placeholder="Preço R$">
 										<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />

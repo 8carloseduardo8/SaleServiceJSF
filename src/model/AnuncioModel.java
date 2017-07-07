@@ -1,18 +1,17 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import conect.Conector;
 import conect.Conexao;
 import conect.Oracle;
 import conect.Resultado;
-import entity.CadastroAnuncioEntity;
+import entity.AnuncioEntity;
 
-public class CadastroAnuncioModel {
+public class AnuncioModel {
 	private Conexao con;
 
-	public CadastroAnuncioModel() {
+	public AnuncioModel() {
 		con = Conector.getConexao();
 		createTable();
 	}
@@ -25,12 +24,12 @@ public class CadastroAnuncioModel {
 		con.executarNoEx("ALTER TABLE  CADASTROANUNCIO ADD preco       	  DECIMAL(12,2)");
 	}
 
-	public List<CadastroAnuncioEntity> get() throws Exception {
+	public ArrayList<AnuncioEntity> get() throws Exception {
 		String sql = "SELECT * FROM CADASTROANUNCIO ORDER BY id";
 
 		Resultado result = con.consultar(sql);
 
-		List<CadastroAnuncioEntity> lista = new ArrayList<CadastroAnuncioEntity>();
+		ArrayList<AnuncioEntity> lista = new ArrayList<AnuncioEntity>();
 		while (result.next())
 			lista.add(parse(result));
 
@@ -39,19 +38,19 @@ public class CadastroAnuncioModel {
 		return lista;
 	}
 
-	public CadastroAnuncioEntity get(int id) throws Exception {
+	public AnuncioEntity get(int id) throws Exception {
 		String sql = "SELECT * FROM CADASTROANUNCIO WHERE id = " + Oracle.strInsert(id);
 
 		Resultado res = con.consultar(sql);
 
-		CadastroAnuncioEntity Usuario = null;
+		AnuncioEntity Usuario = null;
 		if (res.next())
 			Usuario = parse(res);
 		res.close();
 		return Usuario;
 	}
 
-	public void registrar(CadastroAnuncioEntity item) throws Exception {
+	public void registrar(AnuncioEntity item) throws Exception {
 		String sql;
 
 		if (item.id == 0) {
@@ -76,8 +75,8 @@ public class CadastroAnuncioModel {
 		return;
 	}
 
-	public static CadastroAnuncioEntity parse(Resultado res) throws Exception {
-		CadastroAnuncioEntity item = new CadastroAnuncioEntity();
+	public static AnuncioEntity parse(Resultado res) throws Exception {
+		AnuncioEntity item = new AnuncioEntity();
 		item.id = res.getInt("id");
 		item.titulo = res.getString("titulo");
 		item.categoria = res.getString("categoria");

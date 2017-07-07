@@ -59,15 +59,8 @@
 				<ul class="nav nav-pills nav-stacked">
 					<h3>Filtros</h3>
 					<div class="form-group">
-						<div class="input-group">
-							<input type="text" class="form-control input-sm"
-								placeholder="Filtro" />
-							<div class="input-group-btn">
-								<button class="btn btn-default input-sm" type="submit">
-									<i class="glyphicon glyphicon-search"></i>
-								</button>
-							</div>
-						</div>
+						<input type="text" class="form-control input-sm"
+							placeholder="Filtro" />
 					</div>
 					<div class="form-group">
 						<select class="form-control input-sm" id="ordenar" name="ordenar"
@@ -112,68 +105,59 @@
 					<li>
 						<div class="checkbox">
 							<a href="" class="link"><label><input type="checkbox"
-									value="" />Domestica</label></a>
+									value="Doméstica" /></label></a>
 						</div>
 					</li>
 					<li>
 						<div class="checkbox">
 							<a href="" class="link"><label><input type="checkbox"
-									value="" />Mecanica</label></a>
+									value="Mecânico" /></label></a>
 						</div>
 					</li>
 					<li>
 						<div class="checkbox">
 							<a href="" class="link"><label><input type="checkbox"
-									value="" />Lazer</label></a>
+									value="Lazer" />Lazer</label></a>
 						</div>
 					</li>
 					<hr class="colorgraph" />
 
 					<h:commandButton value="Filtrar"
+						action="#{consultarAnuncio.filtrar}"
 						styleClass="btn btn-lg btn-success btn-block" />
 
 				</ul>
 			</div>
 			<div class="container col-sm-10">
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/domestica.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<label class="titulo">Serviço Domestico</label> <br /> <label
-										class="corpo">Prestação de serviços em seu domicilio</label>
-								</div>
-							</a>
+
+					<c:forEach var="anuncio" items="#{consultarAnuncio.listaAnuncio}">
+						<div class="col-sm-4">
+							<div class="blocoServico">
+								<a class="link" href="/SaleService/servico.html"> <h:graphicImage
+										value="img/domestica.jpg" class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Doméstica'}"
+										style="width: 100%" /> <h:graphicImage
+										value="img/mecanico.jpg" class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Mecânico'}"
+										style="width: 100%" /> <h:graphicImage
+										value="img/tecnico_celular.jpg" class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Técnico Celular'}"
+										style="width: 100%" /> <h:graphicImage
+										value="img/auditoria_empresa.jpg" class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Auditoria Empresas'}"
+										style="width: 100%" />
+
+
+									<div class="blocoServicoMensagem">
+										<h:outputLabel styleClass="titulo" value="#{anuncio.titulo}" />
+										<br />
+										<h:outputLabel styleClass="corpo" value="#{anuncio.descricao}" />
+									</div>
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/tecnico_celular.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<label class="titulo">Assistência técnica de celular</label><br />
-									<label class="corpo">restamos assistência técnica das
-										demais marcas</label>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/auditoria_empresa.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<label class="titulo">Acompanhando sua microempresa de
-										perto</label><br /> <label class="corpo">Serviços
-										especializado de auditora para mico e pequenas empresas</label>
-								</div>
-							</a>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<br />

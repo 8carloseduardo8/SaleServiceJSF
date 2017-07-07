@@ -4,43 +4,43 @@ import javax.annotation.PostConstruct;
 
 import com.util.Mensagem;
 
-import entity.CadastroAnuncioEntity;
+import entity.AnuncioEntity;
 
 public class CadastroAnuncioController {
 
-	private CadastroAnuncioEntity cadastroAnuncio;
+	private AnuncioEntity anuncio;
 
 	@PostConstruct
 	public void init() {
-		if (cadastroAnuncio == null)
-			cadastroAnuncio = new CadastroAnuncioEntity();
+		if (anuncio == null)
+			anuncio = new AnuncioEntity();
 	}
 
 	public String novo() {
-		cadastroAnuncio = new CadastroAnuncioEntity();
+		anuncio = new AnuncioEntity();
 		return "cadastroAnuncio";
 	}
 
 	public String registrar() {
 		try {
-			cadastroAnuncio.registrarAnuncio();
+			anuncio.registrarAnuncio();
 		} catch (Exception e) {
 			Mensagem.Erro(e.getMessage(), "");
 			return "";
 		}
 
 		Mensagem.Info("ANUNCIO REGISTRADO COM SUCESSO!", "");
-		cadastroAnuncio = new CadastroAnuncioEntity();
+		anuncio = new AnuncioEntity();
 
 		return "";
 	}
 
-	public CadastroAnuncioEntity getCadastroAnuncio() {
-		return cadastroAnuncio;
+	public AnuncioEntity getAnuncio() {
+		return anuncio;
 	}
 
-	public void setCadastroAnuncio(CadastroAnuncioEntity cadastroAnuncio) {
-		this.cadastroAnuncio = cadastroAnuncio;
+	public void setAnuncio(AnuncioEntity anuncio) {
+		this.anuncio = anuncio;
 	}
 
 }
