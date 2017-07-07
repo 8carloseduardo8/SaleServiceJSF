@@ -42,7 +42,8 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar Anuncio</a></li>
+						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
+								Anuncio</a></li>
 						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -65,28 +66,33 @@
 						<div class="panel panel-primary">
 							<div class="panel-heading">Titulo</div>
 							<div class="panel-body">
-								<a class="link" href="/SaleService/servico.html"> <img
-								src="img/domestica.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" /></a>
+								<h:graphicImage value="img/domestica.jpg" class="img-responsive"
+									rendered="#{anuncio.categoria eq 'Doméstica'}"
+									style="width: 100%" />
+								<h:graphicImage value="img/mecanico.jpg" class="img-responsive"
+									rendered="#{anuncio.categoria eq 'Mecânico'}"
+									style="width: 100%" />
+								<h:graphicImage value="img/tecnico_celular.jpg"
+									class="img-responsive"
+									rendered="#{anuncio.categoria eq 'Técnico Celular'}"
+									style="width: 100%" />
+								<h:graphicImage value="img/auditoria_empresa.jpg"
+									class="img-responsive"
+									rendered="#{anuncio.categoria eq 'Auditoria Empresas'}"
+									style="width: 100%" />
 							</div>
-							<div class="panel-footer">Descriçao</div>
+							<div class="panel-footer"></div>
 						</div>
 
-						<h3>Preço: R$ 1.000,00</h3>
+						<h:outputText value="#{visualizarAnuncio.anuncio.preco}" />
 
 						<h3>Detalhes do serviço</h3>
-						<h5>
-							Descriçao do serviço de limpeza geral em casas ou empresas <br/>
-							Pagamento adiantado <br/>
-							Preço por hora de serviço <br/>
-							Remoçao da sujeira superficial, manchas, desbotados, etc...
-						</h5>
+						<h:outputText value="#{visualizarAnuncio.anuncio.descricao}" />
 
 						<h3>
-							Contato <br/>
-							(62) 99191-9090
+							Contato <br /> (62) 99191-9090
 						</h3>
-						<br/>
+						<br />
 					</div>
 					<div class="col-sm-4">
 						<a id="usuario" href="/SaleService/login/usuarioLogin.html">
@@ -96,8 +102,7 @@
 									<h2>
 										<span class="glyphicon glyphicon-user"></span>Usuario123456
 									</h2>
-									<br/>
-									<br/>
+									<br /> <br />
 									<div class="col-md-6">
 										<h:commandButton styleClass="btn btn-lg btn-success btn-block"
 											value="Iniciar Chat"></h:commandButton>

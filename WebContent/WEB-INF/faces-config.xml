@@ -22,6 +22,12 @@
 		<managed-bean-class>controller.ConsultarAnuncioController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>visualizarAnuncio</managed-bean-name>
+		<managed-bean-class>controller.VisualizarAnuncio</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>
 
