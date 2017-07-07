@@ -46,4 +46,8 @@ public class ConsultarAnuncioController {
 	public void setListaAnuncio(ArrayList<AnuncioEntity> listaAnuncio) {
 		this.listaAnuncio = listaAnuncio;
 	}
+
+	public ArrayList<String> getListaCategorias() {
+		return AnuncioEntity.getListaCategorias();
+	}
 }

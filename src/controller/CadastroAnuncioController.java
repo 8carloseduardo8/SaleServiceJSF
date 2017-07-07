@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import javax.annotation.PostConstruct;
 
 import com.util.Mensagem;
@@ -41,6 +43,10 @@ public class CadastroAnuncioController {
 
 	public void setAnuncio(AnuncioEntity anuncio) {
 		this.anuncio = anuncio;
+	}
+
+	public ArrayList<String> getListaCategorias() {
+		return AnuncioEntity.getListaCategorias();
 	}
 
 }

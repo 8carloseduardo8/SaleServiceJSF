@@ -26,17 +26,21 @@
 			<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
 				<div class="text-center">
-					<label class="tituloMenu">SaleService</label> <br /> <label
-						class="subTituloMenu">Seu site de busca de serviços</label>
+					<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
+					<br />
+					<h:outputLabel styleClass="subTituloMenu"
+						value="Seu site de busca de serviços"></h:outputLabel>
 				</div>
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
+					<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
 						data-target="#myNavbar">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</h:commandButton>
 					<li class="active"><a class="navbar-brand"
-						href="/saleservice/"><span class="glyphicon glyphicon-home"></span></a></li>
+						href="/saleservice/"><h:panelGroup
+								styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
@@ -73,13 +77,9 @@
 									<h:outputLabel for="categoria"></h:outputLabel>
 									<h:selectOneMenu styleClass="form-control" id="categoria"
 										value="#{cadastroAnuncio.anuncio.categoria}">
-										<f:selectItem itemValue="Doméstica" itemLabel="Doméstica" />
-										<f:selectItem itemValue="Mecânico" itemLabel="Mecânico" />
-										<f:selectItem itemValue="Lazer" itemLabel="Lazer" />
-										<f:selectItem itemValue="Auditoria Empresas"
-											itemLabel="Auditoria Empresas" />
-										<f:selectItem itemValue="Técnico Celular"
-											itemLabel="Técnico Celular" />
+										<f:selectItems value="#{cadastroAnuncio.listaCategorias}"
+											var="categoria" itemLabel="#{categoria}"
+											itemValue="#{categoria}" />
 									</h:selectOneMenu>
 								</div>
 							</div>

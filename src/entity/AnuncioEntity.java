@@ -82,4 +82,15 @@ public class AnuncioEntity {
 		this.preco = preco;
 	}
 
+	public static ArrayList<String> getListaCategorias() {
+		ArrayList<String> lista = new ArrayList<>();
+		lista.add("Doméstica");
+		lista.add("Mecânico");
+		lista.add("Festa");
+		lista.add("Informática");
+		lista.add("Auditoria");
+		lista.add("Celular");
+		return lista;
+	}
+
 }

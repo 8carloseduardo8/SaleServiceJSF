@@ -41,7 +41,8 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar Anuncio</a></li>
+						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
+								Anuncio</a></li>
 						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -105,24 +106,12 @@
 					</li>
 					<hr class="colorgraph" />
 					<h4>Categoria</h4>
-					<li>
-						<div class="checkbox">
-							<a href="" class="link"><label><input type="checkbox"
-									value="Doméstica" /></label></a>
-						</div>
-					</li>
-					<li>
-						<div class="checkbox">
-							<a href="" class="link"><label><input type="checkbox"
-									value="Mecânico" /></label></a>
-						</div>
-					</li>
-					<li>
-						<div class="checkbox">
-							<a href="" class="link"><label><input type="checkbox"
-									value="Lazer" />Lazer</label></a>
-						</div>
-					</li>
+
+					<h:selectManyCheckbox layout="pageDirection">
+						<f:selectItems value="#{consultarAnuncio.listaCategorias}"
+							var="categoria" itemLabel="#{categoria}" itemValue="#{categoria}" />
+					</h:selectManyCheckbox>
+
 					<hr class="colorgraph" />
 
 					<h:commandButton value="Filtrar"

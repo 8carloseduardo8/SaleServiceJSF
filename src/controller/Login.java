@@ -3,7 +3,6 @@ package controller;
 import javax.annotation.PostConstruct;
 
 import com.util.Mensagem;
-import com.util.Sessao;
 
 import entity.UsuarioEntity;
 import model.UsuarioModel;
@@ -36,7 +35,6 @@ public class Login {
 			}
 
 			// Util.SecurityController.usuarioSessao = this;
-			Sessao.setLogin(this);
 			logado = true;
 			usuario = user;
 
