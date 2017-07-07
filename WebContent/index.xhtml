@@ -13,123 +13,118 @@
 	<link rel="stylesheet"
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<style>
-</style>
 </h:head>
 <h:body>
-	<f:view>
-		<h:form>
-			<!-- Dados do Cabeçalho da página -->
-			<nav class="navbar navbar-inverse navbar-static-top">
-			<div class="container-fluid">
-				<div class="text-center">
-					<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
-					<br />
-					<h:outputLabel styleClass="subTituloMenu"
-						value="Seu site de busca de serviços"></h:outputLabel>
-				</div>
-				<div class="navbar-header">
-					<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</h:commandButton>
-					<li class="active"><a class="navbar-brand"
-						href="/saleservice/"><h:panelGroup
-								styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar Anuncio</a></li>
-						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/saleservice/usuarioLogin.jsf"><span
-								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
-					</ul>
-					<a class="navbar-brand navbar-right"
-						href="/saleservice/produtos.jsf"><span
-						class="glyphicon glyphicon-search"></span></a>
-				</div>
-			</div>
-			</nav>
-			<!-- Fim Cabeçalho -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/domestica.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<h:outputLabel class="titulo">Serviço Domestico</h:outputLabel>
-									<br />
-									<h:outputLabel class="corpo">Prestação de serviços em seu domicilio</h:outputLabel>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/tecnico_celular.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<h:outputLabel class="titulo">Assistência técnica de celular</h:outputLabel>
-									<br />
-									<h:outputLabel class="corpo">Prestamos assistência técnica das
-										demais marcas</h:outputLabel>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blocoServico">
-							<a class="link" href="/SaleService/servico.html"> <img
-								src="img/auditoria_empresa.jpg" class="img-responsive"
-								style="width: 100%" alt="Image" />
-								<div class="blocoServicoMensagem">
-									<h:outputLabel class="titulo">Acompanhando sua microempresa de
-										perto</h:outputLabel>
-									<br />
-									<h:outputLabel class="corpo">Serviços
-										especializado de auditora para mico e pequenas empresas</h:outputLabel>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br />
+	<h:form>
+		<!-- Dados do CabeÃ§alho da pÃ¡gina -->
+		<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
 			<div class="text-center">
-				<ul class="pagination">
-					<li><a href="#" h:outputLabel="Previous"> <span>&laquo;</span></a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#" h:outputLabel="Next"> <span>&raquo;</span></a></li>
-				</ul>
+				<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
+				<br />
+				<h:outputLabel styleClass="subTituloMenu"
+					value="Seu site de busca de serviÃ§os"></h:outputLabel>
 			</div>
-			<br />
-			<footer class="container-fluid text-center">
-			<p>Sale loja on-line</p>
-			<form class="form-inline">
-				<div class="form-group">
-					<h:outputLabel>Notificar Promoções</h:outputLabel>
-					<h:inputText styleClass="form-control"
-						a:placeholder="endereço de email" />
-					<h:commandButton styleClass="btn btn-danger" value="Inscrever-se"></h:commandButton>
+			<div class="navbar-header">
+				<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</h:commandButton>
+				<li class="active"><a class="navbar-brand" href="/saleservice/"><h:panelGroup
+							styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/saleservice/produtos.jsf">ServiÃ§os</a></li>
+					<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
+							Anuncio</a></li>
+					<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/saleservice/usuarioLogin.jsf"><span
+							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+				</ul>
+				<a class="navbar-brand navbar-right"
+					href="/saleservice/produtos.jsf"><span
+					class="glyphicon glyphicon-search"></span></a>
+			</div>
+		</div>
+		</nav>
+		<!-- Fim CabeÃ§alho -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="blocoServico">
+						<a class="link" href="/SaleService/servico.html"> <img
+							src="img/domestica.jpg" class="img-responsive"
+							style="width: 100%" alt="Image" />
+							<div class="blocoServicoMensagem">
+								<h:outputLabel class="titulo">ServiÃ§o Domestico</h:outputLabel>
+								<br />
+								<h:outputLabel class="corpo">PrestaÃ§Ã£o de serviÃ§os em seu domicilio</h:outputLabel>
+							</div>
+						</a>
+					</div>
 				</div>
-			</form>
-			</footer>
-		</h:form>
-	</f:view>
+				<div class="col-sm-4">
+					<div class="blocoServico">
+						<a class="link" href="/SaleService/servico.html"> <img
+							src="img/tecnico_celular.jpg" class="img-responsive"
+							style="width: 100%" alt="Image" />
+							<div class="blocoServicoMensagem">
+								<h:outputLabel class="titulo">AssistÃªncia tÃ©cnica de celular</h:outputLabel>
+								<br />
+								<h:outputLabel class="corpo">Prestamos assistÃªncia tÃ©cnica das demais marcas</h:outputLabel>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="blocoServico">
+						<a class="link" href="/SaleService/servico.html"> <img
+							src="img/auditoria_empresa.jpg" class="img-responsive"
+							style="width: 100%" alt="Image" />
+							<div class="blocoServicoMensagem">
+								<h:outputLabel class="titulo">Acompanhando sua microempresa de
+										perto</h:outputLabel>
+								<br />
+								<h:outputLabel class="corpo">ServiÃ§os
+										especializado de auditora para mico e pequenas empresas</h:outputLabel>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="text-center">
+			<ul class="pagination">
+				<li><a href="#" h:outputLabel="Previous"> <span>&laquo;</span></a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#" h:outputLabel="Next"> <span>&raquo;</span></a></li>
+			</ul>
+		</div>
+		<br />
+		<footer class="container-fluid text-center">
+		<p>Sale loja on-line</p>
+		<form class="form-inline">
+			<div class="form-group">
+				<h:outputLabel>Notificar PromoÃ§Ãµes</h:outputLabel>
+				<h:inputText styleClass="form-control"
+					a:placeholder="endereÃ§o de email" />
+				<h:commandButton styleClass="btn btn-danger" value="Inscrever-se"></h:commandButton>
+			</div>
+		</form>
+		</footer>
+	</h:form>
 </h:body>
 </html>
