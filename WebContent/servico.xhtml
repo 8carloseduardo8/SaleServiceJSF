@@ -1,36 +1,48 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<title>Sale Service</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-
-	<!-- Dados do Cabe√ßalho da p√°gina -->
-	<nav class="navbar navbar-inverse navbar-static-top">
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Sale Service</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<style>
+</style>
+</h:head>
+<h:body>
+	<f:view>
+		<h:form>
+			<!-- Dados do CabeÁalho da p·gina -->
+			<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
 				<div class="text-center">
-					<label class="tituloMenu">SaleService</label> <br /> <label
-						class="subTituloMenu">Seu site de busca de servi√ßos</label>
+					<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
+					<br />
+					<h:outputLabel styleClass="subTituloMenu"
+						value="Seu site de busca de serviÁos"></h:outputLabel>
 				</div>
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
+					<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
 						data-target="#myNavbar">
-						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</h:commandButton>
 					<li class="active"><a class="navbar-brand"
-						href="/saleservice/"><span class="glyphicon glyphicon-home"></span></a></li>
+						href="/saleservice/"><h:panelGroup
+								styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li><a href="/saleservice/produtos.jsf">Servi√ßos</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
-								Anuncio</a></li>
+						<li><a href="/saleservice/produtos.jsf">ServiÁos</a></li>
+						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar Anuncio</a></li>
 						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -45,54 +57,61 @@
 				</div>
 			</div>
 			</nav>
-	<!-- Fim Cabe√ßalho -->
+			<!-- Fim CabeÁalho -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Titulo</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Descri√ßao</div>
-				</div>
-
-				<h3>Pre√ßo: R$ 1.000,00</h3>
-				<h5>
-					Descri√ßao<br> Descri√ßao<br> Descri√ßao<br> Descri√ßao<br>
-					Descri√ßao
-				</h5>
-
-				<h3>Detalhes do servi√ßo</h3>
-				<ul>
-					<li>Tipo:</li>
-					<li>Modelo:</li>
-					<li>Dimensoes:</li>
-				</ul>
-
-				<h3>Contato</h3>
-				Tel: <br> Localiza√ßao....
-			</div>
-			<div class="col-sm-4">
-				<a id="usuario" href="/SaleService/login/usuarioLogin.html">
-					<div class="panel panel-primary">
-						<div class="panel-heading"></div>
-						<div class="panel-body">
-							<h2>
-								<span class="glyphicon glyphicon-user"></span>Usuario123456
-							</h2>
-							<br> <br>
-							<div class="col-md-6">
-								<input type="submit" class="btn btn-lg btn-success btn-block"
-									value="Iniciar Chat">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Titulo</div>
+							<div class="panel-body">
+								<a class="link" href="/SaleService/servico.html"> <img
+								src="img/domestica.jpg" class="img-responsive"
+								style="width: 100%" alt="Image" /></a>
 							</div>
+							<div class="panel-footer">DescriÁao</div>
 						</div>
 
-						<div class="panel-footer" id="rodape"></div>
+						<h3>PreÁo: R$ 1.000,00</h3>
+
+						<h3>Detalhes do serviÁo</h3>
+						<h5>
+							DescriÁao do serviÁo de limpeza geral em casas ou empresas <br/>
+							Pagamento adiantado <br/>
+							PreÁo por hora de serviÁo <br/>
+							RemoÁao da sujeira superficial, manchas, desbotados, etc...
+						</h5>
+
+						<h3>
+							Contato <br/>
+							(62) 99191-9090
+						</h3>
+						<br/>
 					</div>
-				</a>
+					<div class="col-sm-4">
+						<a id="usuario" href="/SaleService/login/usuarioLogin.html">
+							<div class="panel panel-primary">
+								<div class="panel-heading"></div>
+								<div class="panel-body">
+									<h2>
+										<span class="glyphicon glyphicon-user"></span>Usuario123456
+									</h2>
+									<br/>
+									<br/>
+									<div class="col-md-6">
+										<h:commandButton styleClass="btn btn-lg btn-success btn-block"
+											value="Iniciar Chat"></h:commandButton>
+									</div>
+								</div>
+
+								<div class="panel-footer" id="rodape"></div>
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
+		</h:form>
+	</f:view>
+</h:body>
+
+</html>

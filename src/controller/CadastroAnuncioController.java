@@ -25,7 +25,7 @@ public class CadastroAnuncioController {
 		try {
 			anuncio.registrarAnuncio();
 		} catch (Exception e) {
-			Mensagem.Erro(e.getMessage(), "");
+			Mensagem.Erro(e.getMessage(), "Erro!");
 			return "";
 		}
 
