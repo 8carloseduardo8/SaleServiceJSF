@@ -63,8 +63,8 @@
 				<ul class="nav nav-pills nav-stacked">
 					<h3>Filtros</h3>
 					<div class="form-group">
-						<input type="text" class="form-control input-sm"
-							placeholder="Filtro" />
+						<h:inputText styleClass="form-control input-sm"
+							value="#{consultarAnuncio.filtro}" />
 					</div>
 					<div class="form-group">
 						<select class="form-control input-sm" id="ordenar" name="ordenar"
@@ -124,7 +124,7 @@
 				<div class="row">
 
 					<c:forEach var="anuncio" items="#{consultarAnuncio.listaAnuncio}">
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<div class="blocoServico">
 								<a class="link" href="/SaleService/servico.html"> <h:graphicImage
 										value="img/domestica.jpg" class="img-responsive"
@@ -138,9 +138,12 @@
 										style="width: 100%" /> <h:graphicImage
 										value="img/auditoria_empresa.jpg" class="img-responsive"
 										rendered="#{anuncio.categoria eq 'Auditoria Empresas'}"
-										style="width: 100%" />
-
-
+										style="width: 100%" /> <h:graphicImage
+										value="img/formatar_computador.jpg" class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Informática'}"
+										style="width: 100%" /> <h:graphicImage value="img/festa.jpg"
+										class="img-responsive"
+										rendered="#{anuncio.categoria eq 'Festa'}" style="width: 100%" />
 									<div class="blocoServicoMensagem">
 										<h:outputLabel styleClass="titulo" value="#{anuncio.titulo}" />
 										<br />

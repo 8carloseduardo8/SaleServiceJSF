@@ -12,6 +12,7 @@ import model.AnuncioModel;
 public class ConsultarAnuncioController {
 
 	private ArrayList<AnuncioEntity> listaAnuncio;
+	private String filtro;
 
 	@PostConstruct
 	public void init() {
@@ -27,7 +28,7 @@ public class ConsultarAnuncioController {
 	public String filtrar() {
 
 		try {
-			listaAnuncio = new AnuncioEntity().get();
+			listaAnuncio = new AnuncioEntity().get(filtro);
 		} catch (Exception e) {
 			Mensagem.Erro(e.getMessage(), "");
 			e.printStackTrace();
@@ -50,4 +51,13 @@ public class ConsultarAnuncioController {
 	public ArrayList<String> getListaCategorias() {
 		return AnuncioEntity.getListaCategorias();
 	}
+
+	public String getFiltro() {
+		return filtro;
+	}
+
+	public void setFiltro(String filtro) {
+		this.filtro = filtro;
+	}
+
 }

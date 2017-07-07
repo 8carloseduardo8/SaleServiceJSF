@@ -50,6 +50,23 @@ public class AnuncioModel {
 		return Usuario;
 	}
 
+	public ArrayList<AnuncioEntity> get(String filtro) throws Exception {
+
+		filtro = "%" + filtro.toUpperCase() + "%";
+
+		String sql = "SELECT * FROM CADASTROANUNCIO ";
+		sql += " WHERE UPPER(titulo) like " + Oracle.strInsert(filtro);
+		sql += " OR   UPPER(descricao) like " + Oracle.strInsert(filtro);
+
+		Resultado res = con.consultar(sql);
+
+		ArrayList<AnuncioEntity> lista = new ArrayList<>();
+		while (res.next())
+			lista.add(parse(res));
+		res.close();
+		return lista;
+	}
+
 	public void registrar(AnuncioEntity item) throws Exception {
 		String sql;
 

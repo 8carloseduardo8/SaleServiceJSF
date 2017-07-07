@@ -20,131 +20,111 @@
 
 </h:head>
 <h:body>
-	<f:view>
-		<h:form>
-			<!-- Dados do Cabe�alho da p�gina -->
-			<nav class="navbar navbar-inverse navbar-static-top">
-			<div class="container-fluid">
-				<div class="text-center">
-					<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
-					<br />
-					<h:outputLabel styleClass="subTituloMenu"
-						value="Seu site de busca de serviços"></h:outputLabel>
-				</div>
-				<div class="navbar-header">
-					<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</h:commandButton>
-					<li class="active"><a class="navbar-brand"
-						href="/saleservice/"><h:panelGroup
-								styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
-						<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
-								Anuncio</a></li>
-						<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/saleservice/usuarioLogin.jsf"><span
-								class="glyphicon glyphicon-user"></span> Sua conta </a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
-					</ul>
-					<a class="navbar-brand navbar-right"
-						href="/saleservice/produtos.jsf"><span
-						class="glyphicon glyphicon-search"></span></a>
-				</div>
+	<h:form enctype="multipart/form-data">
+		<!-- Dados do Cabe�alho da p�gina -->
+		<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="text-center">
+				<h:outputLabel styleClass="tituloMenu" value="SaleService"></h:outputLabel>
+				<br />
+				<h:outputLabel styleClass="subTituloMenu"
+					value="Seu site de busca de serviços"></h:outputLabel>
 			</div>
-			</nav>
-			<!-- Fim Cabe�alho -->
-			<h:messages showSummary="true" errorClass="alert alert-danger"
-				infoClass="alert alert-success" warnClass="alert alert-warning" />
+			<div class="navbar-header">
+				<h:commandButton styleClass="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</h:commandButton>
+				<li class="active"><a class="navbar-brand" href="/saleservice/"><h:panelGroup
+							styleClass="glyphicon glyphicon-home"></h:panelGroup></a></li>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/saleservice/produtos.jsf">Serviços</a></li>
+					<li><a href="/saleservice/cadastroAnuncio.jsf">Cadastrar
+							Anuncio</a></li>
+					<li><a href="/saleservice/faleConosco.jsf">Contato</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/saleservice/usuarioLogin.jsf"><span
+							class="glyphicon glyphicon-user"></span> Sua conta </a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+				</ul>
+				<a class="navbar-brand navbar-right"
+					href="/saleservice/produtos.jsf"><span
+					class="glyphicon glyphicon-search"></span></a>
+			</div>
+		</div>
+		</nav>
+		<!-- Fim Cabe�alho -->
+		<h:messages showSummary="true" errorClass="alert alert-danger"
+			infoClass="alert alert-success" warnClass="alert alert-warning" />
 
-			<div class="container">
-				<div class="row">
-					<div
-						class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
-						<h2>Cadastro de Anúncio</h2>
-						<hr class="colorgraph" />
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<h:outputLabel for="categoria"></h:outputLabel>
-									<h:selectOneMenu styleClass="form-control" id="categoria"
-										value="#{cadastroAnuncio.anuncio.categoria}">
-										<f:selectItems value="#{cadastroAnuncio.listaCategorias}"
-											var="categoria" itemLabel="#{categoria}"
-											itemValue="#{categoria}" />
-									</h:selectOneMenu>
-								</div>
+		<div class="container">
+			<div class="row">
+				<div
+					class="col-xs-12 col-sm-8 col-md-20 col-sm-offset-2 col-md-offset-2">
+					<h2>Cadastro de Anúncio</h2>
+					<hr class="colorgraph" />
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<h:outputLabel for="categoria"></h:outputLabel>
+								<h:selectOneMenu styleClass="form-control" id="categoria"
+									value="#{cadastroAnuncio.anuncio.categoria}">
+									<f:selectItems value="#{cadastroAnuncio.listaCategorias}"
+										var="categoria" itemLabel="#{categoria}"
+										itemValue="#{categoria}" />
+								</h:selectOneMenu>
 							</div>
 						</div>
-
-						<div class="form-group">
-							<h:inputText value="#{cadastroAnuncio.anuncio.titulo}"
-								id="display_name" styleClass="form-control input-lg"
-								a:placeholder="Titulo" />
-						</div>
-						<div class="form-group">
-							<h:inputTextarea value="#{cadastroAnuncio.anuncio.descricao}"
-								id="descricao" styleClass="form-control input-lg" rows="5"
-								a:placeholder="Descriçao"></h:inputTextarea>
-						</div>
-						<div class="row">
-							<div class="col-md-5">
-								<div class="form-group">
-									<h:inputText value="#{cadastroAnuncio.anuncio.preco}"
-										id="preco" class="form-control input-lg"
-										a:placeholder="Preço R$">
-										<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
-									</h:inputText>
-								</div>
-							</div>
-						</div>
-						<!--
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<label class="input-group-btn"> <span
-										class="btn btn-primary"> Browse&hellip; <h:inputFile
-												style="display: true;" /></span>
-									</label>
-									<h:inputText styleClass="form-control" />
-								</div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-6">
-								<div class="panel panel-primary">
-									<div class="panel-heading">Inserir imagem</div>
-									<div class="panel-body">
-										<img src="https://placehold.it/150x80?text=IMAGE"
-											class="img-responsive" style="width: 100%" alt="Image"/>
-									</div>
-								</div>
-							</div>
-						</div>-->
-
-						<hr class="colorgraph" />
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3">
-
-								<h:commandButton value="Registrar"
-									styleClass="btn btn-lg btn-success btn-block"
-									action="#{cadastroAnuncio.registrar}" />
-							</div>
-						</div>
-
 					</div>
+
+					<div class="form-group">
+						<h:inputText value="#{cadastroAnuncio.anuncio.titulo}"
+							id="display_name" styleClass="form-control input-lg"
+							a:placeholder="Titulo" />
+					</div>
+					<div class="form-group">
+						<h:inputTextarea value="#{cadastroAnuncio.anuncio.descricao}"
+							id="descricao" styleClass="form-control input-lg" rows="5"
+							a:placeholder="Descriçao"></h:inputTextarea>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<h:inputText value="#{cadastroAnuncio.anuncio.preco}" id="preco"
+									class="form-control input-lg" a:placeholder="Preço R$">
+									<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+								</h:inputText>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<h:inputFile id="file" value="#{funcionarioBean.uploadedPhoto}" />
+							</div>
+						</div>
+					</div>
+
+
+					<hr class="colorgraph" />
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+
+							<h:commandButton value="Registrar"
+								styleClass="btn btn-lg btn-success btn-block"
+								action="#{cadastroAnuncio.registrar}" />
+						</div>
+					</div>
+
 				</div>
 			</div>
-		</h:form>
-	</f:view>
+		</div>
+	</h:form>
 </h:body>
 </html>

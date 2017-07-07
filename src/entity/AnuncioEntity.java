@@ -15,7 +15,8 @@ public class AnuncioEntity {
 	public String categoria;
 	public String descricao;
 	public double preco;
-
+	public byte[] imagem;
+	
 	public void registrarAnuncio() throws Exception {
 
 		if (titulo == null || titulo.equals("")) {
@@ -38,8 +39,8 @@ public class AnuncioEntity {
 		new AnuncioModel().registrar(this);
 	}
 
-	public ArrayList<AnuncioEntity> get() throws Exception {
-		return new AnuncioModel().get();
+	public ArrayList<AnuncioEntity> get(String filtro) throws Exception {
+		return new AnuncioModel().get(filtro);
 	}
 
 	public int getId() {
